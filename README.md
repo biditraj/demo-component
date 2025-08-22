@@ -254,10 +254,6 @@ Each component includes comprehensive Storybook stories:
 4. Add tests and documentation
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the ISC License.
-
 ## 🙏 Acknowledgments
 
 - React team for the amazing framework
@@ -266,5 +262,3 @@ This project is licensed under the ISC License.
 - Webpack team for module bundling
 
 ---
-
-Built with ❤️ using modern web technologies
