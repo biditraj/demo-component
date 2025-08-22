@@ -1,0 +1,259 @@
+/* InputField Component Styles */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.input-field__label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-field__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field__input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #ffffff;
+  color: #111827;
+  outline: none;
+}
+
+.input-field__input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-field__input::placeholder {
+  color: #9ca3af;
+}
+
+/* Variants */
+.input-field--filled .input-field__input {
+  background-color: #f9fafb;
+  border-color: transparent;
+}
+
+.input-field--filled .input-field__input:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.input-field--outlined .input-field__input {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.input-field--ghost .input-field__input {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid #d1d5db;
+  border-radius: 0;
+}
+
+.input-field--ghost .input-field__input:focus {
+  border-bottom-color: #3b82f6;
+}
+
+/* Sizes */
+.input-field--sm .input-field__input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-field--md .input-field__input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.input-field--lg .input-field__input {
+  padding: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+/* States */
+.input-field--focused .input-field__input {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-field--invalid .input-field__input {
+  border-color: #ef4444;
+}
+
+.input-field--invalid .input-field__input:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-field--disabled .input-field__input {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input-field--loading .input-field__input {
+  padding-right: 3rem;
+}
+
+/* Helper and Error Text */
+.input-field__helper-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #6b7280;
+}
+
+.input-field__error-message {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #ef4444;
+}
+
+/* Loading Spinner */
+.input-field__loading {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.input-field__spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Clear Button */
+.input-field__clear {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-field__clear:hover {
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
+
+/* Password Toggle */
+.input-field__password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-field__password-toggle:hover {
+  background-color: #f3f4f6;
+}
+
+/* Adjust padding when both clear and password toggle are present */
+.input-field--clearable.input-field--password-toggle .input-field__input {
+  padding-right: 5rem;
+}
+
+.input-field--clearable.input-field--password-toggle .input-field__clear {
+  right: 2.5rem;
+}
+
+/* Dark Theme */
+.input-field--dark .input-field__label {
+  color: #e5e7eb;
+}
+
+.input-field--dark .input-field__input {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.input-field--dark .input-field__input::placeholder {
+  color: #6b7280;
+}
+
+.input-field--dark.input-field--filled .input-field__input {
+  background-color: #374151;
+}
+
+.input-field--dark.input-field--filled .input-field__input:focus {
+  background-color: #1f2937;
+}
+
+.input-field--dark .input-field__helper-text {
+  color: #9ca3af;
+}
+
+.input-field--dark .input-field__clear:hover {
+  background-color: #374151;
+}
+
+.input-field--dark .input-field__password-toggle:hover {
+  background-color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .input-field__input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .input-field--sm .input-field__input {
+    font-size: 16px;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.input-field__input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .input-field__input {
+    border-width: 2px;
+  }
+  
+  .input-field__input:focus {
+    border-width: 3px;
+  }
+}
